@@ -1,0 +1,4 @@
+class AddEmailToAdmins < ActiveRecord::Migration
+  def change
+  end
+end
