@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
+  resources :homes
+
   devise_for :users
   resources :admins
 
   resources :members
+
+#devise_scope :user do
+#get "sign_in", :to => "devise/sessions#new"
+#end
+
+root to: "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
