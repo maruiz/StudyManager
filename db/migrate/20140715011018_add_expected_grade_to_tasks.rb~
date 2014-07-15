@@ -1,0 +1,4 @@
+class AddExpectedGradeToTasks < ActiveRecord::Migration
+  def change
+  end
+end

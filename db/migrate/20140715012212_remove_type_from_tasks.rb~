@@ -1,0 +1,4 @@
+class RemoveTypeFromTasks < ActiveRecord::Migration
+  def change
+  end
+end
