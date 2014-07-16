@@ -10,5 +10,11 @@
   <%= @course.course_number %>
 </p>
 
+<strong>Tasks:</strong></br>
+</br></br></br>
+
+<%= link_to 'Add a tasks', new_task_path(@course)%>
+</br></br></br>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
