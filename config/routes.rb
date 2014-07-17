@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :work_blocks
+
+  resources :tests
+
+  resources :projects
+
+  resources :homeworks
+
   resources :courses
 
   resources :tasks

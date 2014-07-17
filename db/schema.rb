@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715025946) do
+ActiveRecord::Schema.define(version: 20140717021105) do
 
   create_table "admins", force: true do |t|
     t.string   "name"
@@ -27,11 +27,21 @@ ActiveRecord::Schema.define(version: 20140715025946) do
     t.datetime "updated_at"
   end
 
+  create_table "homeworks", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "members", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+  end
+
+  create_table "projects", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tasks", force: true do |t|
@@ -40,6 +50,11 @@ ActiveRecord::Schema.define(version: 20140715025946) do
     t.datetime "updated_at"
     t.datetime "due_date"
     t.integer  "expected_grade"
+  end
+
+  create_table "tests", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -56,9 +71,17 @@ ActiveRecord::Schema.define(version: 20140715025946) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "work_blocks", force: true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

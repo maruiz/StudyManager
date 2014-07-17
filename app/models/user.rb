@@ -16,6 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  type                   :string(255)
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base

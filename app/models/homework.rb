@@ -10,8 +10,5 @@
 #  expected_grade :integer
 #
 
-class Task < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :courses
-  has_many :work_logs
+class Homework < Task
 end

@@ -1,0 +1,10 @@
+class CreateWorkBlocks < ActiveRecord::Migration
+  def change
+    create_table :work_blocks do |t|
+      t.column :start_time, :datetime
+      t.column :end_time, :datetime
+
+      t.timestamps
+    end
+  end
+end
