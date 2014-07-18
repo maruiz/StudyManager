@@ -1,16 +1,14 @@
-<h1>Welcome</h1>
-
-      <% if !user_signed_in? %>
-             <%= link_to 'Sign In', new_user_session_path %>
-      <% else %>
-             </br>
-             </br>
-             <%= link_to 'View Tasks', tasks_path(@welcome)%>
-
-             </br>
-             <%= link_to 'View Courses', courses_path(@welcome)%>
-
-       <% end %>
+<% if !user_signed_in? %>
+    <h1>Welcome</h1>
+    <%= link_to 'Sign In', new_user_session_path %>
+<% else %>
+    <h1>Welcome <%= current_user.name %></h1>
+    <% if current_user.type.eql? "Admin" %>
+       <%=link_to 'Members', members_path %>
+    <% else %>
+       <%= link_to 'Courses', courses_path %>
+    <% end %>
+<% end %>
 
 
 &nbsp;
