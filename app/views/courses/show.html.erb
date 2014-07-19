@@ -10,10 +10,20 @@
   <%= @course.course_number %>
 </p>
 
-<strong>Tasks:</strong></br>
+
+<p>
+  <strong>Tasks:</strong>
+  <% if @course.tasks %>
+        <% @course.tasks.each do |task| %>
+	   <li><%= link_to task.name, task_path(task.id) %>
+	   </li>
+	  <% end %>
+  <% end %>
+</p>
+
 </br></br></br>
 
-<%= link_to 'Add a tasks', new_task_path(@course)%>
+<%= link_to 'Add a task', new_task_path(:course_id => @course.id)%>
 </br></br></br>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

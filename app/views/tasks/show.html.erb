@@ -6,5 +6,28 @@
   <%= @task.name %>
 </p>
 
+<p>
+  <strong>Course:</strong>
+  <%= @task.associated_course.title %>
+ </p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @task.due_date %>
+ </p>
+
+<p>
+  <strong>Expected Grade:</strong>
+  <%= @task.expected_grade %>
+ </p>
+
+<p>
+  <strong>Work Logs:</strong>
+ </p>
+
+<%= link_to 'Record Work Log', new_work_block_path %>
+
+<%= link_to 'Return to Courses', courses_path %>
+</br>
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

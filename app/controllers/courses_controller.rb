@@ -25,6 +25,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
+    @courses.users << User.find(params[:user_id]) unless params[:user_id].blank?
 
     respond_to do |format|
       if @course.save

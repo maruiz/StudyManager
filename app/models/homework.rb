@@ -8,6 +8,7 @@
 #  updated_at     :datetime
 #  due_date       :datetime
 #  expected_grade :integer
+#  course_id      :integer
 #
 
 class Homework < Task

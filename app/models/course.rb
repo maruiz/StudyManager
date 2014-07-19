@@ -10,6 +10,6 @@
 #
 
 class Course < ActiveRecord::Base
-  belongs_to :users
+  belongs_to :members
   has_many :tasks
 end
