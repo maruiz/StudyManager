@@ -25,7 +25,7 @@ class WorkBlocksController < ApplicationController
   # POST /work_blocks.json
   def create
     @work_block = WorkBlock.new(work_block_params)
-
+ 
     respond_to do |format|
       if @work_block.save
         format.html { redirect_to @work_block, notice: 'Work block was successfully created.' }

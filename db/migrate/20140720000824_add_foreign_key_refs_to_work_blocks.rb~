@@ -1,0 +1,4 @@
+class AddForeignKeyRefsToWorkBlocks < ActiveRecord::Migration
+  def change
+  end
+end

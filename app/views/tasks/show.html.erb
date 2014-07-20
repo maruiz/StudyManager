@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <p>
   <strong>Name:</strong>
   <%= @task.name %>
@@ -23,11 +22,15 @@
 
 <p>
   <strong>Work Logs:</strong>
+
  </p>
 
-<%= link_to 'Record Work Log', new_work_block_path %>
-
+<%= link_to 'Record Work Log', new_work_block_path(:task_id => @task.id) %>
+</br>
+</br>
 <%= link_to 'Return to Courses', courses_path %>
 </br>
+</br>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

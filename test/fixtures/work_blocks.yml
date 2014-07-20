@@ -3,10 +3,11 @@
 # Table name: work_blocks
 #
 #  id         :integer          not null, primary key
-#  start_time :datetime
-#  end_time   :datetime
+#  start_time :date
+#  end_time   :date
 #  created_at :datetime
 #  updated_at :datetime
+#  task_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

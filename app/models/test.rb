@@ -6,9 +6,10 @@
 #  name           :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
-#  due_date       :datetime
+#  due_date       :date
 #  expected_grade :integer
 #  course_id      :integer
+#  type           :string(255)
 #
 
 class Test < Task

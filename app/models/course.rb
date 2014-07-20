@@ -12,4 +12,10 @@
 class Course < ActiveRecord::Base
   belongs_to :members
   has_many :tasks
+
+
+  def associated_member
+    member = Member.find(member_id)
+  end
+
 end
