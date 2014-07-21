@@ -16,5 +16,12 @@
   <%= distance_of_time_in_words(@work_block.start_time, @work_block.end_time) %>
 </p>
 
+
+</br>
+
+
 <%= link_to 'Edit', edit_work_block_path(@work_block) %> |
-<%= link_to 'Back', work_blocks_path %>
+<%= link_to 'Return to Task', task_path(@work_block.task_id)%>
+
+</br>
+

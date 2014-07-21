@@ -12,4 +12,9 @@
 
 class WorkBlock < ActiveRecord::Base
   belongs_to :tasks
+
+def associated_task
+  task = Task.find(task_id)
+end
+
 end

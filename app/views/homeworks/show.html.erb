@@ -1,4 +1,41 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @homework.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @homework.associated_course.title %>
+ </p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @homework.due_date %>
+ </p>
+
+<p>
+  <strong>Expected Grade:</strong>
+  <%= @homework.expected_grade %>
+ </p>
+
+<p>
+  <strong>Work Logs:</strong>
+
+        <% @homework.work_blocks.each do |homework| %>
+	   <li><%= work_block.name %>
+	        </li>
+	     <% end %>
+
+ </p>
+
+<%= link_to 'Record Work Log', new_work_block_path(:task_id => @homework.id) %>
+</br>
+</br>
+<%= link_to 'Return to Courses', courses_path %>
+</br>
+</br>
+
 <%= link_to 'Edit', edit_homework_path(@homework) %> |
-<%= link_to 'Back', homeworks_path %>
+

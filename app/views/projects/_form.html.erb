@@ -11,6 +11,26 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :due_date %><br>
+    <%= f.date_field :due_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expected_grade %><br>
+    <%= f.number_field :expected_grade %>
+  </div>
+
+  <div>
+  <%= hidden_field_tag :course_id, params[:course_id] %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

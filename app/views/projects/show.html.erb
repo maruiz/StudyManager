@@ -1,4 +1,37 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @project.associated_course.title %>
+ </p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @project.due_date %>
+ </p>
+
+<p>
+  <strong>Expected Grade:</strong>
+  <%= @project.expected_grade %>
+ </p>
+
+<p>
+  <strong>Work Logs:</strong>
+
+ </p>
+
+<%= link_to 'Record Work Log', new_work_block_path(:task_id => @project.id) %>
+</br>
+</br>
+<%= link_to 'Return to Courses', courses_path %>
+</br>
+
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

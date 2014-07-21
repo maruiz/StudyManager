@@ -15,6 +15,7 @@ class WorkBlocksController < ApplicationController
   # GET /work_blocks/new
   def new
     @work_block = WorkBlock.new
+    @work_block.task_id = params[:task_id]
   end
 
   # GET /work_blocks/1/edit
@@ -25,7 +26,7 @@ class WorkBlocksController < ApplicationController
   # POST /work_blocks.json
   def create
     @work_block = WorkBlock.new(work_block_params)
- 
+
     respond_to do |format|
       if @work_block.save
         format.html { redirect_to @work_block, notice: 'Work block was successfully created.' }
@@ -69,6 +70,6 @@ class WorkBlocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_block_params
-      params.require(:work_block).permit(:start_time, :end_time)
+      params.require(:work_block).permit(:start_time, :end_time, :task_id)
     end
 end

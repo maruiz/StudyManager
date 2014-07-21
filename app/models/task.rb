@@ -15,7 +15,7 @@
 class Task < ActiveRecord::Base
   belongs_to :members
   belongs_to :courses
-  has_many :work_logs
+  has_many :work_blocks
 
   def associated_course
    course = Course.find(course_id)

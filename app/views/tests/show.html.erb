@@ -1,4 +1,44 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @test.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @test.associated_course.title %>
+ </p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @test.due_date %>
+ </p>
+
+<p>
+  <strong>Expected Grade:</strong>
+  <%= @test.expected_grade %>
+ </p>
+
+<p>
+  <strong>Work Logs:</strong></br>
+  <% if @test.work_blocks %>
+         <% @test.work_blocks.each do |work_block| %>
+                  <li><%= work_block.start_time %>
+		  </li>
+	 <% end %>
+  <% end %></br>
+
+
+ </p>
+
+<%= link_to 'Record Work Log', new_work_block_path(:task_id => @test.id) %>
+</br>
+</br>
+<%= link_to 'Return to Courses', courses_path %>
+</br>
+</br>
+
+
 <%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Back', tests_path %>
