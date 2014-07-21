@@ -22,16 +22,23 @@
  </p>
 
 <p>
+<% if @project.work_blocks %>
   <strong>Work Logs:</strong>
+         <% @project.work_blocks.each do |work_block| %>
+               <li>Start: <%= work_block.start_time %> &nbsp;
+		  End: <%= work_block.end_time %>
+		  &nbsp;
+		  <%= link_to 'Edit', edit_work_block_path(work_block) %> 
+		         </li>
+         <% end %>
+  <% end %>
+</br>
 
  </p>
 
-<%= link_to 'Record Work Log', new_work_block_path(:task_id => @project.id) %>
+<%= link_to 'Record Work Log', new_work_block_path(:task_id => @project.id) %> | <%= link_to 'Edit Task' , edit_task_path(@project) %>
 </br>
 </br>
+<%= link_to 'Back', course_path(@project.course_id) %> | 
 <%= link_to 'Return to Courses', courses_path %>
 </br>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

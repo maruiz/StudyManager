@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= @task.type %>:</strong>
   <%= @task.name %>
 </p>
 
@@ -38,6 +38,5 @@
 <%= link_to 'Edit Task' , edit_task_path(@task) %>
 </br>
 </br>
-<%= link_to 'Return to Courses', courses_path %> |
-<%= link_to 'Return to Course Tasks', course_path(@task.course_id) %>
-
+<%= link_to 'Back', course_path(@task.course_id) %> | 
+<%= link_to 'Return to Courses', courses_path %> 

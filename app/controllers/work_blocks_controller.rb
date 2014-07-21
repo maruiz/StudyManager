@@ -26,6 +26,7 @@ class WorkBlocksController < ApplicationController
   # POST /work_blocks.json
   def create
     @work_block = WorkBlock.new(work_block_params)
+    @work_block.task_id = params[:task_id]
 
     respond_to do |format|
       if @work_block.save

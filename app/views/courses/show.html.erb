@@ -12,21 +12,41 @@
 
 
 <p>
-  <strong>Tasks:</strong>
-  <% if @course.tasks %>
-        <% @course.tasks.each do |task| %>
-	   <li><%= link_to task.name, task_path(task.id) %>
+  <% if @course.tests %>
+  <strong>Test:</strong>
+        <% @course.tests.each do |test| %>
+	   <li><%= link_to test.name, test_path(test.id) %>
 	   </li>
 	  <% end %>
   <% end %>
 </p>
 
-</br></br></br>
-
 <%= link_to 'Add a Test', new_test_path(:course_id => @course.id)%>
 </br>
+
+<p>
+<% if @course.homeworks %>
+  <strong>Homeworks:</strong>
+        <% @course.homeworks.each do |homework| %>
+           <li><%= link_to homework.name, homework_path(homework.id) %>
+           </li>
+          <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Add a Homework', new_homework_path(:course_id => @course.id)%>
 </br>
+
+<p>
+  <% if @course.projects %>
+  <strong>Projects:</strong>
+        <% @course.projects.each do |project| %>
+           <li><%= link_to project.name, project_path(project.id) %>
+           </li>
+          <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Add a Project', new_project_path(:course_id => @course.id)%>
 </br>
 </br>

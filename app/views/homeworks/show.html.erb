@@ -21,21 +21,23 @@
  </p>
 
 <p>
+  <% if @homework.work_blocks %>
   <strong>Work Logs:</strong>
-
-        <% @homework.work_blocks.each do |homework| %>
-	   <li><%= work_block.name %>
+         <% @homework.work_blocks.each do |work_block| %>
+               <li>Start: <%= work_block.start_time %> &nbsp;
+		  End: <%= work_block.end_time %>
+		  &nbsp;
+		  <%= link_to 'Edit', edit_work_block_path(work_block) %> 
 	        </li>
-	     <% end %>
+         <% end %>
+  <% end %>
+</br>
 
  </p>
 
 <%= link_to 'Record Work Log', new_work_block_path(:task_id => @homework.id) %>
 </br>
 </br>
-<%= link_to 'Return to Courses', courses_path %>
+<%= link_to 'Back', course_path(@homework.course_id) %> | 
+<%= link_to 'Return to Courses', courses_path %> 
 </br>
-</br>
-
-<%= link_to 'Edit', edit_homework_path(@homework) %> |
-
